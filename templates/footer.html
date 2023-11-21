@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive-h-f.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="footer">
+        <div class="f-con">
+            <div class="f-logo">
+                <a href="/"><img src="/static/icon/Veestara_logo.svg" alt="logo"></a>
+                <p>Namaste, Your Trusted source for daily, weekly, Monthly and Yearly horoscope updates! We are
+                    dedicated to
+                    bringing you insightful and accurate astrological guidance to help you navigate life's twists and
+                    turns.
+                </p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="f-nav">
+                <div id="f-title">Pages</div>
+
+                <h4 class="footer-link" data-url="/">Home</h4>
+                <h4 class="footer-link" data-url="/about">About us</h4>
+                <h4 class="footer-link" data-url="/contact">Contact us</h4>
+                <h4 class="footer-link" data-url="/sitemap">Sitemap</h4>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="f-nav">
+                <div id="f-title">Quick Links</div>
+
+                <h4 class="footer-link" data-url="/Astrology">Astrology</h4>
+                <h4 class="footer-link" data-url="/Horoscope">Horoscope</h4>
+                <h4 class="footer-link" data-url="/">Birth-Chart</h4>
+                <h4 class="footer-link" data-url="/">Abhi Vala</h4>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="f-nav">
+                <div id="f-title">Contact</div>
+
+                <div class="mail">
+                    <img src="/static/icon/mail_send.svg" alt="menu" id="icon-mail">
+                    <div class="v-mail">veestara0@gmail.com</div>
+                </div>
+
+                <div id="f-title">Social</div>
+
+                <div class="social">
+                    <img class="footer-link" data-url="/" src="/static/icon/twitter.svg" alt="menu">
+                    <img class="footer-link" data-url="/" src="/static/icon/instagram.svg" alt="menu">
+                    <img class="footer-link" data-url="/" src="/static/icon/facebook.svg" alt="menu">
+                    <img class="footer-link" data-url="/" src="/static/icon/youtube.svg" alt="menu">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mobile-f">
+            <img class="footer-link" data-url="/" src="/static/icon/Veestara_logo.svg" alt="logo" id="m-f-logo">
+
+            <div class="m-con">
+                <div class="f-nav" id="pages">
+                    <div id="f-title">Pages</div>
+
+                    <h4 class="footer-link" data-url="/">Home</h4>
+                    <h4 class="footer-link" data-url="/about">About us</h4>
+                    <h4 class="footer-link" data-url="/contact">Contact us</h4>
+                    <h4 class="footer-link" data-url="/sitemap">Sitemap</h4>
+                </div>
+
+                <div class="f-nav" id="quicklinks">
+                    <div id="f-title">Quick Links</div>
+
+                    <h4 class="footer-link" data-url="/Astrology">Astrology</h4>
+                    <h4 class="footer-link" data-url="/Horoscope">Horoscope</h4>
+                    <h4 class="footer-link" data-url="/">Birth-Chart</h4>
+                    <h4 class="footer-link" data-url="/">Abhi Vala</h4>
+
+                </div>
+            </div>
+
+            <div class="m-f-contact">
+                <div class="f-nav">
+                    <div id="f-title">Contact</div>
+
+                    <div class="mail">
+                        <img src="/static/icon/mail_send.svg" alt="menu" id="icon-mail">
+                        <div class="v-mail">veestara0@gmail.com</div>
+                    </div>
+
+                    <div id="f-title">Social</div>
+
+                    <div id="social" class="social">
+                        <img class="footer-link" data-url="/" src="/static/icon/twitter.svg" alt="menu">
+                        <img class="footer-link" data-url="/" src="/static/icon/instagram.svg" alt="menu">
+                        <img class="footer-link" data-url="/" src="/static/icon/facebook.svg" alt="menu">
+                        <img class="footer-link" data-url="/" src="/static/icon/youtube.svg" alt="menu">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="f-credit">
+            &copy; 2023 Veestara
+        </div>
+
+    </div>
+
+    <script>
+        const flinks = document.querySelectorAll(".footer-link");
+
+        flinks.forEach(link => {
+            link.addEventListener("click", function () {
+                const url = this.getAttribute('data-url');
+                window.location.href = url
+
+                this.classList.add('clicked');
+
+                // Remove the 'clicked' class after a short delay (for visual feedback)
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                }, 300);
+            })
+        })
+
+    </script>
+</body>
+
+</html>

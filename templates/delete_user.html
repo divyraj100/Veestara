@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete User</title>
+</head>
+<body>
+    <h1>Delete User</h1>
+    <p>Are you sure you want to delete this user?</p>
+    <p><strong>User:</strong> {{ user.username }}</p>
+    <form method="POST">
+        <input type="hidden" name="user_id" value="{{ user.id }}">
+        <button type="submit">Confirm Deletion</button>
+    </form>
+    <a href="{{ url_for('user_management_page') }}">Cancel</a>
+</body>
+</html>

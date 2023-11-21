@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='grid-card.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700">
+    <title>Blog Home</title>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <h2 align="center">Category: {{ category }}</h2>
+    <main>
+        <section class="article-list">
+            <!-- Display a list of articles here -->
+
+            {% set latest_post = articles | max(attribute='Date') %}
+            {% if latest_post %}
+            {% for article in articles %}
+            <a href="{{ url_for('display_blog_post', category=article.Category, url=article.URL) }}">
+                <article class="article-card">
+                    <img src="{{ url_for('display_image', article_id=article.Id) }}" alt="Article Image">
+                    <div class="content-wrapper">
+                        <span class="date-span"><b>{{ article.Date.strftime("%d %b %Y") }}</b></span>
+                        <div class="separator">
+                            <hr class="hr1">
+                            <span class="separator-text">x</span>
+                            <hr class="hr2">
+                        </div>
+                        <h2 class="article-title">{{ article.Title | safe }}</h2>
+                        <p class="article-description">{{ article.Content | striptags | wordlimit(25) | safe }}</p>
+                        <div class="separator">
+                            <hr class="hr3">
+                            <span class="separator-text">x</span>
+                            <hr class="hr4">
+                        </div>
+                        <span><b>By {{ article.Author }}</b></span>
+                    </div>
+                </article>
+            </a>
+            {% endfor %}
+            <!-- Add more article cards here -->
+            {% else %}
+            <p>No posts available</p>
+            {% endif %}
+
+
+        </section>
+    </main>
+    {% include 'footer.html' %}
+</body>
+
+</html>

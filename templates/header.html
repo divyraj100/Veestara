@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive-h-f.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700">
+
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchIcon = document.querySelector('.icon-h-search-2');
+            const searchBox = document.querySelector('.search-box');
+            const menuIcon = document.querySelector('.icon-menu');
+            const dropdownMenu = document.querySelector('.menu');
+            const body = document.body;
+
+            function closeMenuAndSearch(event) {
+                if (!event.target.closest('.search-box') && !event.target.closest('.icon-h-search-2')) {
+                    searchBox.classList.remove('active');
+                    body.classList.remove('blur');
+                }
+
+                if (!event.target.closest('.menu') && !event.target.closest('.icon-menu')) {
+                    dropdownMenu.classList.remove('active');
+                    body.classList.remove('blur-menu');
+                }
+
+                // Remove the blur class from body
+                body.classList.remove('blur-all');
+                document.removeEventListener('click', closeMenuAndSearch);
+            }
+
+            searchIcon.addEventListener('click', function () {
+                searchBox.classList.toggle('active');
+                searchBox.style.zIndex = 2;
+                body.classList.toggle('blur');
+
+                if (searchBox.classList.contains('active')) {
+                    // Add the blur class to body when search box is active
+                    body.classList.add('blur-all');
+                    document.addEventListener('click', closeMenuAndSearch);
+                }
+            });
+
+            menuIcon.addEventListener('click', function () {
+                dropdownMenu.classList.toggle('active');
+                dropdownMenu.style.zIndex = 2;
+                body.classList.toggle('blur-menu');
+
+                if (dropdownMenu.classList.contains('active')) {
+                    // Add the blur class to body when menu is active
+                    body.classList.add('blur-all');
+                    document.addEventListener('click', closeMenuAndSearch);
+                }
+            });
+
+            // Add an event listener to the body to close menu and search box when clicking anywhere on the body
+            body.addEventListener('click', closeMenuAndSearch);
+        }); 
+    </script>
+</head>
+
+<body>
+    <div class="header">
+
+        <img src="/static/icon/menu.svg" alt="menu" id="icon-menu" class="icon-menu">
+
+        <!-- <h2 class="logo">Logo</h2> -->
+
+        <div class="logo header-link" data-url="/">
+            <img src="/static/icon/Logo.svg" alt="logo" id="logo-icon">
+            <img src="/static/icon/Veestara_logo.svg" alt="logo" id="logo-text">
+        </div>
+
+
+
+        <div class="nav">
+            <h4 class="header-link" data-url="/">Home</h4>
+            <h4 class="header-link" data-url="/blogs">Blogs</h4>
+            <h4 class="header-link" data-url="/Astrology">Astrology</h4>
+            <h4 class="header-link" data-url="/Horoscope">Horoscope</h4>
+            <h4 class="header-link" data-url="{{ url_for('pages') }}">Pages</h4>
+            <h4 class="header-link" data-url="/">Contact</h4>
+
+            <!-- <i class="ri-menu-3-line"></i> -->
+        </div>
+
+        <img src="/static/icon/h_search.svg" alt="menu" id="icon-h-search-2" class="icon-h-search-2">
+
+        <form action="{{ url_for('search') }}" method="GET" class="search-form">
+            <div class="h-search">
+                <input type="text" class="search-txt" name="q" placeholder="Type to search">
+                <button class="search-btn">
+                    <img src="/static/icon/h_search.svg" alt="menu" id="icon-h-search">
+                </button>
+
+            </div>
+        </form>
+
+    </div>
+
+    <form action="{{ url_for('search') }}" method="GET" class="search-form">
+        <div class="search-box">
+
+            <input class="h-search-txt" type="text" name="q" placeholder="Type to search">
+            <button class="h-search-btn">
+                <img src="/static/icon/sbox_search.svg" alt="menu" id="icon-sbox-search" class="fill-color">
+            </button>
+
+        </div>
+    </form>
+
+    <div class="menu">
+        <div class="mob-nav">
+
+            <h4 class="header-link" data-url="/">Home</h4>
+            <h4 class="header-link" data-url="/blogs">Blogs</h4>
+            <h4 class="header-link" data-url="/Astrology">Astrology</h4>
+            <h4 class="header-link" data-url="/Horoscope">Horoscope</h4>
+            <h4 class="header-link" data-url="{{ url_for('pages') }}">Pages</h4>
+            <h4 class="header-link" data-url="/">Contact</h4>
+
+
+
+        </div>
+    </div>
+
+    <script>
+        const hlinks = document.querySelectorAll(".header-link");
+
+        hlinks.forEach(link => {
+            link.addEventListener("click", function () {
+                const url = this.getAttribute('data-url');
+                window.location.href = url
+
+                this.classList.add('clicked');
+
+                // Remove the 'clicked' class after a short delay (for visual feedback)
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                }, 300);
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>

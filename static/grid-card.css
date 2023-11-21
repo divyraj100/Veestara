@@ -1,0 +1,119 @@
+/* Reset some default styles */
+
+
+.ul_ li a {
+    font-weight: 500; /* Set the desired font-weight value (e.g., 500 for medium) */
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Style the article list */
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 0 0 2.3vh;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.article-list a{
+    text-decoration: none;
+}
+
+.article-card {
+    width: 248px;
+    background-color: #fff;
+    color: black;
+    border: 2px solid #E09728;
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    margin-right: 48px;
+    border-radius: 18px;
+
+}
+
+.article-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.article-title {
+    margin-top: 18px;
+    font-size: 1.4vw;
+    font-weight: 700;
+}
+
+.article-description {
+    margin-top: 8px;
+    font-weight: 500;
+
+}
+
+
+.article-card a {
+    text-decoration: none;
+}
+
+.article-card:hover {
+    color: white;
+    background-color: #333;
+
+}
+
+.article-card:hover hr {
+    background-color: white;
+    /* Change the color of the hr tags to white on hover */
+}
+
+.article-card:hover a {
+    color: white;
+    /* Make all links white on hover */
+    text-decoration: none;
+    /* Remove underline from links on hover (optional) */
+    transition: background-color 0.3s ease, color 0.2s ease;
+    /* Add a delay of 0.3 seconds */
+}
+
+.article-card a {
+    color: black;
+}
+
+.article-card h2.article-title,
+.article-card p.article-description {
+    color: inherit;
+}
+
+/* Style the article page */
+.article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+}
+
+.hr1,
+.hr2,
+.hr3,
+.hr4 {
+    flex: 1;
+    height: 1px;
+    background-color: #000;
+    border: none;
+}

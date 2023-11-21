@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Form</title>
+    <link rel="stylesheet" href="/static/insert_form.css">
+
+
+    {{ckeditor.load(pkg_type="full")}}
+
+    <!-- <script>
+        CKEDITOR.replace('Content', {
+            toolbar: [
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike'] },
+                { name: 'styles', items: ['Format'] }
+            ]
+
+        });
+
+    </script> -->
+
+
+</head>
+
+<body>
+    {% include 'dashboard.html' %}
+    <div class="container">
+        <h1 align="center">Create a Article</h1>
+            <form action="/create_article" method="POST" enctype="multipart/form-data">
+                <label for='Id'>Id: </label>
+                <input type="text" id="Id" name="Id"><br><br>
+
+                <label for='Title'>Title: </label>
+                <input type="text" id="Title" name="Title"><br><br>
+
+                <label for="Author">Author:</label>
+                <input type="text" id="Author" name="Author"><br><br>
+
+                <label for="Category">Category:</label>
+                <select id="Category" name="Category">
+                    <option value="" selected disabled>Select a Category</option>
+                    {% for category in pre_category %}
+                    <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select><br><br>
+
+                <label for="Date">Data:</label>
+                <input type="date" id="Data" name="Date"><br><br>
+
+                <label for="URL">URL:</label>
+                <input type="text" id="URL" name="URL"><br><br>
+
+                <!--  <label for="Content">Content: </label>
+                <textarea id="Content" name="Content" rows="4" cols="48"></textarea><br><br> -->
+
+                <label for="Content">Content: </label>
+                {{ form.Content(class="ckeditor") }} <!-- Render the CKEditor field -->
+                <!-- {{ form.Content.label }} Render the field's label -->
+
+
+                <!-- Display the content without using the safe filter -->
+                <!-- <div>
+                    {{ form.Content.data | safe | striptags  }}
+                </div> -->
+                <!-- {% if not ckeditor %}
+                <p>{{ form.Content(class='ckeditor') | safe | striptags }}</p>
+                {% else %}
+                <p>{{ form.Content(class='ckeditor') | safe }}</p>
+                {% endif %} -->
+
+                <!--{{ form.Content.label }} Render the field's label -->
+                <!-- <p> {{ form.Content | safe | striptags  }} </p>Render the CKEditor field -->
+
+                <label for="Image">Image:</label>
+                <input type="file" id="Image" name="Image"><br><br>
+
+                <button type="submit" name="action" value="create">Create Article</button>
+                <button type="submit" name="action" value="delete">Delete Article</button>
+                <button type="submit" name="action" value="update">Update Article</button>
+                <button type="submit" name="action" value="show">Show Articles</button>
+            </form>
+
+        <a href="/">Back to Home</a>
+</div> 
+</body>
+
+</html>

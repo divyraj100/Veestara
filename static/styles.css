@@ -1,0 +1,583 @@
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    /* Adjust padding as needed */
+    width: 80%;
+    /* Set the width to 50% of its container */
+    /* Center the header horizontally */
+    border-radius: 10px;
+
+}
+
+.ul_ li a {
+    font-weight: 600;
+    margin-right: 18px;
+    /* Set the desired font-weight value (e.g., 500 for medium) */
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Center the Logo Horizontally within the Header */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* Add the sticky footer styles */
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    /* Display articles horizontally */
+}
+
+.article-list a {
+    text-decoration: none;
+}
+
+/* Separator styles (I've removed the 'hr1' selector as it's not used) */
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+
+.separator-text {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+
+/* Footer styles */
+/* Existing styles (you can keep them as is) */
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 28px;
+}
+
+
+/* Make the footer stick to the bottom */
+html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Change flex direction to column */
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.grid_container {
+    flex: 1;
+}
+
+.article {
+    max-width: 800px;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Add styles for the footer columns */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    /* Allow the footer to grow and stick to the bottom */
+}
+
+.footer-column {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-right: 0.5px solid #555;
+    /* Add vertical dividers */
+
+}
+
+
+.footer-column:last-child {
+    border-right: none;
+    /* Remove the divider from the last column */
+}
+
+.veestara-footer-description {
+    text-align: left;
+    color: #fff;
+}
+
+.footer-column2-list {
+    list-style: none;
+}
+
+.footer-column2-list p {
+    padding: 10%;
+}
+
+.footer-credit {
+    color: #fff;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: -10px;
+}
+
+.footer-column3-list {
+    list-style: none;
+}
+
+.p-footer-column4 {
+    display: inline;
+    color: #fff;
+}
+
+.image-footer-column4 {
+    display: inline;
+    /* or display: inline-block; */
+    vertical-align: middle;
+    /* Align the image vertically with the text */
+    margin-right: 10px;
+    /* Add some spacing between the image and text */
+}
+
+/* styles.css */
+.article-details {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.article-category,
+.article-author,
+.article-date {
+    margin-right: 10px;
+}
+
+.article-details::after {
+
+    margin: 0 10px;
+}
+
+.article-content {
+    margin-top: 18px;
+    font-weight: 700;
+}
+
+/* Add this to your CSS file */
+.category-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #ff6600;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    text-decoration: none;
+    /* Remove underlines from links */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-right: 10px;
+    /* Add some spacing */
+}
+
+.category-button:hover {
+    background-color: #ff9900;
+    /* Change background color on hover */
+}
+
+.article-author,
+.article-date {
+    font-size: 1.1vw;
+    font-weight: 600;
+}
+
+/* styles.css */
+/* Style the search form */
+form {
+    display: inline-block;
+}
+
+/* Style search results */
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 10px 0;
+}
+
+
+/* Search Bar */
+
+.search-box {
+    background: #f2f2f2;
+    height: 40px;
+    border-radius: 40px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin-right: 10px;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 20px;
+    width: 0px;
+    align-items: center;
+}
+
+.search-box:hover>.search-txt {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover>.search-btn {
+    background: #d37334;
+}
+
+.search-btn {
+    cursor: pointer;
+    color: #f2f2f2;
+    float: right;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-btn {
+    border-style: none;
+}
+
+/* 
+Admin screens styles */
+
+
+.container {
+    height: 380px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #555;
+    border-radius: 18px;
+    padding: 18px;
+    margin: 8px auto;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 8px rgba(238, 31, 31, 0.1);
+    justify-content: center;
+}
+
+#txt-login {
+    margin-top: 0;
+}
+
+#txt-login {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-control-label {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 8px;
+    width: 80px;
+    /* Adjust as needed to control label width */
+    text-align: left;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #FF6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flashes li {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+/* 
+comment style */
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    margin: 1.2vw auto;
+    padding: .7vw;
+
+    /* change */
+    width: 100%;
+    max-width: 90vw;
+    height: 30vw;
+    overflow-y: auto;
+    margin: 1.8vw auto 1.5vw 0;
+    padding: 1vw 2vw;
+    border: 1px solid #dadada;
+    border-radius: 1.2vw;
+}
+
+.comment .cmt-title {
+    font-size: 2vw;
+    font-weight: 500;
+}
+
+.article {
+    margin-bottom: .1vw;
+}
+
+.cmt_user {
+    display: flex;
+    align-items: center;
+    margin: 0 0 .8vw 0;
+}
+
+.cmt_user strong {
+    font-size: 1.2vw;
+    margin-right: 1vw;
+}
+
+.cmt_cmt {
+    margin-bottom: 1vw;
+    max-width: 100%;
+    height: auto;
+    font-size: 1.2vw;
+    font-weight: 400;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.art_comment textarea {
+    padding: .7vw 1vw;
+
+}
+
+
+@media (max-width:600px) {
+    .article-title {
+        font-size: 2.5vh;
+    }
+
+    .date-span {
+        font-size: 2vh;
+    }
+
+
+    .article-author,
+    .article-date {
+        font-size: 1.9vh;
+    }
+
+    /* 
+    comment style */
+
+    .comment {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 60vw;
+        max-width: 90vw;
+        overflow-y: auto;
+        margin: 1.8vh auto 1.5vh 0;
+        padding: 1.2vw 2.4vw;
+        border: 1px solid #dadada;
+        border-radius: 2vw;
+    }
+
+    .comment .cmt-title {
+        font-size: 3.4vh;
+        font-weight: 500;
+    }
+
+    .comment>.list-group {
+        width: 100%;
+        height: auto;
+    }
+
+    .article {
+        border-radius: 0;
+        border-bottom: none;
+        margin-bottom: 1.2vh;
+    }
+
+    .cmt_user {
+        display: flex;
+        align-items: center;
+        margin: 0 0 1.4vw 0;
+    }
+
+    .cmt_user strong {
+        font-size: 2.2vh;
+        margin-right: 1.2vw;
+    }
+
+    .cmt_cmt {
+        margin-bottom: 1.4vw;
+        max-width: 100%;
+        height: auto;
+        font-size: 2.6vh;
+        font-weight: 400;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+}
+
+
+@media (min-width:601px) and (max-width:1024px) {
+
+    .article-author,
+    .article-date {
+        font-size: 1.5vw;
+    }
+
+    /* comment style */
+
+    .comment {
+        display: flex;
+        flex-direction: column;
+        margin: 1.2vw auto;
+        padding: .7vw;
+
+        width: 100%;
+        max-width: 90vw;
+        height: 30vw;
+        overflow-y: auto;
+        margin: 1.8vw auto 1.2vw 0;
+        padding: 1vw 2vw;
+        border: 1px solid #dadada;
+        border-radius: 1.2vw;
+    }
+
+    .comment .cmt-title {
+        font-size: 2vw;
+        font-weight: 500;
+    }
+
+    .article {
+        margin-bottom: .1vw;
+    }
+
+    .cmt_user {
+        display: flex;
+        align-items: center;
+        margin: 0 0 .8vw 0;
+    }
+
+    .cmt_user strong {
+        font-size: 1.6vw;
+    }
+
+    .cmt_cmt{
+        font-size: 1.6vw;
+    }
+
+}
+@media (min-width:1025px) {
+
+    .article-author,
+    .article-date {
+        font-size: 1.2vw;
+    }
+}

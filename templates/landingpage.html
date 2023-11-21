@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700">
+</head>
+
+<body>
+    {% include 'header.html' %}
+
+    <div class="cantainer">
+        <div class="horoscope">
+            <div class="horo-con">
+                <h1 class="heading-txt">Horoscope <span>Insights</span> <br>for <span>Your</span> Journey</br> </h1>
+                <p class="sub-heading-txt">Dive into the cosmic realm and uncover the profound insights that the
+                    universe
+                    has to offer. At Veestara,
+                    we bring you daily horoscopes and astrology guidance that can help you navigate life's journey with
+                    celestial wisdom.</p>
+                <div class="redirect" id="horo-cta-btn">Explore now</div>
+
+
+                <!-- <a href="/Horoscope">
+                    <div id="cta-btn">Explore now</div>
+                </a> -->
+            </div>
+            <div class="horo-img">
+                <img src="/static/media/horo1.png" alt="horo-img">
+            </div>
+        </div>
+
+        <div class="astrology">
+            <div class="astro-con">
+                <h1 class="heading-txt">Astrology <span>Unveiled</span> Your <span>Story</span> Written in
+                    the Stars
+                </h1>
+                <p class="sub-heading-txt">Embark on a journey through the cosmic wonders that shape your destiny. Our
+                    astrology section unveils the intricate connections between celestial bodies and your life's
+                    journey.</p>
+                <div class="redirect" id="astro-cta-btn">Explore now</div>
+
+
+                <!-- <a href="/Astrology">
+                    <div id="cta-btn">Explore now</div>
+                </a> -->
+            </div>
+            <div class="astro-img">
+                <img src="/static/media/astro1.png" alt="horo-img">
+            </div>
+        </div>
+
+        <div class="about">
+            <h1>What we do</h1>
+            <p>Laborum sint cupidatat in do esse est sunt eu ex. Adipisicing quis reprehenderit incididunt labore velit
+                voluptate ullamco dolore cillum elit. Enim adipisicing eu non duis. Quis in cillum esse cillum. Lorem
+                pariatur ullamco incididunt aliqua ea incididunt irure labore aliquip in exercitation.
+
+                <span> Esse est culpa magna nisi ex culpa fugiat do nostrud laboris. Quis officia in duis amet eiusmod
+                    reprehenderit qui labore deserunt aliquip laboris Lorem. Aliqua adipisicing sint eu sunt veniam
+                    nisi.
+                    Enim cillum irure commodo ullamco et elit ex exercitation consequat ipsum. Adipisicing et enim
+                    proident
+                    nostrud. Dolore aute eu proident deserunt tempor velit in pariatur eu incididunt cupidatat nulla.
+
+                    Consectetur velit sint deserunt mollit irure. Ullamco cillum tempor proident reprehenderit
+                    consequat.
+                    Pariatur in aute eu nisi id. Qui laborum laborum quis dolore do ad aute minim exercitation id.
+
+                    Velit cupidatat laborum in qui laboris laboris nisi. Aliqua aliqua laboris esse nisi pariatur esse
+                    et.
+                    Aliquip adipisicing aute est dolor amet deserunt dolor. Id in ipsum commodo exercitation ad
+                    exercitation
+                    aute veniam ex ad eu voluptate cupidatat. Laboris officia ex est voluptate aute in elit irure
+                    laboris
+                    sunt non nisi. Eiusmod id esse adipisicing irure ad officia culpa dolore aute enim adipisicing dolor
+                    est
+                    nostrud. Voluptate sint eiusmod sint duis dolor anim duis dolore.</span>
+            </p>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+    <script>
+
+        const btns = document.querySelectorAll(".redirect");
+
+        btns.forEach(button => {
+            button.addEventListener("click", function () {
+                // Use a conditional check based on button ID to determine the redirection
+                if (this.id === "horo-cta-btn") {
+                    window.location.href = "Horoscope"; // URL for button 1
+                } else if (this.id === "astro-cta-btn") {
+                    window.location.href = "Astrology"; // URL for button 2
+                }
+                // Add more conditions for additional buttons as needed
+            });
+        });
+    </script>
+</body>
+
+</html>

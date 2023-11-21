@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "jost", sans-serif;
+    scroll-behavior: smooth;
+}
+
+a:focus{
+
+    outline: none;
+    border: 1px solid #fff;
+}
+
+
+a{
+    height: fit-content;
+    width: fit-content;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horoscope {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-bottom: 4vw;
+}
+
+.horo-con {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+    padding: 1.5vw 2vw;
+
+}
+
+.horo-con a {
+    text-decoration: none;
+    color: #333;
+}
+
+.heading-txt {
+    font-size: 4vw;
+    margin: 2.2vw 0;
+}
+
+.heading-txt>span {
+    color: pink;
+}
+
+.sub-heading-txt {
+    line-height: 2.8vw;
+    font-size: 1.7vw;
+    margin-bottom: 4vw;
+}
+
+#horo-cta-btn {
+    height: fit-content;
+    width: fit-content;
+    padding: 1vw 2vw;
+    font-size: 1.4vw;
+    border: 1px solid #333;
+    box-shadow: 4px 4px pink;
+    border-radius: 2.2vw;
+}
+
+#horo-cta-btn:hover {
+    background-color: pink;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.break {
+    display: flex;
+}
+
+.horo-img {
+    max-width: 45%;
+    display: flex;
+    padding: 1.5vw 2vw;
+
+}
+
+.horo-img img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 
+.horo-img img{
+    width: 75%;
+    height: 75%;
+} */
+
+.astrology {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    height: auto;
+    margin-bottom: 5vw;
+
+}
+
+.astro-con {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+    padding: 1.5vw 2vw;
+}
+
+.astro-con a {
+    text-decoration: none;
+    color: #333;
+}
+
+.astro-img {
+    max-width:45%;
+    height: auto;
+    padding: 1.5vw 2vw;
+    display: flex;
+}
+
+.astro-img img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#astro-cta-btn {
+    height: fit-content;
+    width: fit-content;
+    padding: 1vw 2vw;
+    font-size: 1.4vw;
+    border: 1px solid #333;
+    box-shadow: 4px 4px pink;
+    border-radius: 2.2vw;
+}
+
+#astro-cta-btn:hover {
+    background-color: pink;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.span-a {
+    display: none;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 1.3vw 3.1vw;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+
+.about h1 {
+    margin-bottom: 2.2vw;
+}
+
+
+@media (max-width:600px) {
+
+    .container {
+        width: 100%;
+        height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    a:focus{
+
+        outline: none;
+        border: 1px solid #fff;
+    }
+
+    a{
+        height: fit-content;
+        width: fit-content;
+    }
+    
+
+    .horoscope {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        height: auto;
+        margin: 1.5vw 0 1vw 0;
+        padding: 1.3vw 2.1vw;
+    }
+
+    .horo-con {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 15vw;
+    }
+
+    .horo-con a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .horo-con h1 {
+        color: #333;
+        line-height: 12vw;
+        margin: 2.2vw 0;
+        font-size: 10vw;
+
+    }
+
+    .heading-txt>span {
+        color: pink;
+    }
+
+    .horo-con p {
+        font-size: 2.6vh;
+        margin-bottom: 3.8vw;
+        line-height: 8vw;
+        color: #333;
+
+    }
+
+    #horo-cta-btn {
+        /* background-color: #dadada; */
+        height: fit-content;
+        width: fit-content;
+        padding: 1.2vw 2.2vw;
+        font-size: 3.4vh;
+        border: 1px solid #333;
+        box-shadow: 3px 3px pink;
+        border-radius: 2.2vw;
+
+    }
+
+    #horo-cta-btn:hover {
+        background-color: pink;
+        box-shadow: none;
+    }
+
+    .horo-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .horo-img img {
+        width: 80vw;
+        height: 80vw;
+        border-radius: 2vw;
+        /* box-shadow: 0 4px 4px 0 pink, 0 3px 20px 0 pink; */
+    }
+
+    .astrology {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: 1.5vw 0 15vw 0;
+        padding: 1.3vw 2.1vw;
+        background-color: #fff;
+    }
+
+    .astro-con {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 15vw;
+    }
+
+    #astro-cta-btn {
+        /* background-color: #dadada; */
+        height: fit-content;
+        width: fit-content;
+        padding: 1.2vw 2.2vw;
+        font-size: 3.4vh;
+        border: 1px solid #333;
+        box-shadow: 3px 3px pink;
+        border-radius: 2.2vw;
+
+    }
+
+    #astro-cta-btn:hover {
+        background-color: pink;
+        box-shadow: none;
+    }
+
+    .astro-con a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .astro-con h1 {
+        color: #333;
+        line-height: 12vw;
+        margin: 2.2vw 0;
+        font-size: 10vw;
+
+
+    }
+
+    .astro-con p {
+        font-size: 2.6vh;
+        margin-bottom: 3.8vw;
+        line-height: 8vw;
+        color: #333;
+
+
+    }
+
+    .astro-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .astro-img img {
+        width: 80vw;
+        height: 80vw;
+        border-radius: 2vw;
+        /* box-shadow: 0 4px 4px 0 pink, 0 3px 20px 0 pink; */
+    }
+
+    .span-a {
+        display: block;
+    }
+
+    .span-h1 {
+        display: none;
+    }
+
+    .break {
+        display: none;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 1.3vw 2.1vw;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5vw;
+        text-align: center;
+    }
+
+    .about h1 {
+        margin-bottom: 2.2vw;
+    }
+
+    .about span {
+        display: none;
+    }
+}

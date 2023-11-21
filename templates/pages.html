@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
+
+    <title>{{ pages.Title }}</title>
+</head>
+<body>
+   {% include 'header.html' %}
+    <section class="article">
+        {% if pages.ImageData %}
+            <img src="{{ url_for('display_image_page', page_id=pages.Id) }}" alt="Article Image">
+        {% endif %}
+        
+        <div class="article-details">
+            <!-- Inside the article-details div -->
+            <div class="article-date">{{ pages.Date.strftime("%B %d, %Y") }}</div>
+        </div>
+        
+        <h1 class="article-title">{{ pages.Title }}</h1>
+        <p class="article-content">{{ pages.Content | safe }}</p>
+    </section>
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #left-panel {
+            width: 200px;
+            background-color: #333;
+            position: absolute;
+            top: 0;
+            left: -200px;
+            height: 100%;
+            transition: left 0.3s;
+            padding-left: 10px;
+            text-align: center; /* Center text horizontally */
+        }
+
+        #left-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #left-panel li {
+            margin-bottom: 10px;
+        }
+
+        #left-panel a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+        }
+
+        #left-panel ul li:hover {
+            background-color: #fff; /* Change the background to white on hover */
+            color: #000; /* Change the font color to black on hover */
+        }
+
+        #left-panel ul li:hover a {
+            color: #000; /* Change the font color to black when hovering over the anchor */
+        }
+
+        .toggle-button {
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            position: absolute;
+            top: 0;
+            right: -25px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-checkbox {
+            display: none;
+        }
+
+        #toggle-checkbox:checked ~ #left-panel {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toggle-checkbox" class="toggle-checkbox">
+
+    <div id="left-panel">
+        <label for="toggle-checkbox" class="toggle-button">
+            <<< >>>
+        </label>
+
+        <ul>
+            <li><a href="{{ url_for('index')}}">Home</a></li>
+            <hr>
+            <li><a href="{{ url_for('create_article') }}">Posts</a></li>
+            <hr>
+            <li><a href="{{ url_for('create_page') }}">Page</a></li>
+            <hr>
+            <li><a href="{{ url_for('register')}}">Register</a></li>
+            <hr>
+            <li><a href="{{ url_for('users')}}">Users</a></li>
+            <hr>
+            <li><a href="{{ url_for('assign_role')}}">User Management</a></li>
+            <hr>
+            <li><a href="{{ url_for('comment_dashboard')}}">Comment Dashboard</a></li>
+            <hr>
+            <li><a href="{{ url_for('comments')}}">Comments</a></li>
+            <hr>
+            <li><a href="{{ url_for('database')}}">Database</a></li>
+            <hr>
+            <li><a href="{{ url_for('pagedatabase')}}">page database</a></li>
+            <hr>           
+            <li><a href="{{ url_for('logout')}}">Logout</a></li>
+        </ul>
+    </div>
+
+    <div id="right-panel">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+
+/* Headings styles */
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Form styles */
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* CKEditor styles */
+.ckeditor {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* File input styles */
+input[type="file"] {
+    margin-top: 10px;
+}
+
+/* Button styles */
+button {
+    background-color: #FF6600;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #df6818;
+}
+
+/* Back to Home link styles */
+a {
+    text-decoration: none;
+    color: #FF6600;
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Error message styles (customize as needed) */
+.error {
+    color: #FF0000;
+    font-size: 14px;
+}
+
+/* Additional styles can be added as needed */
+
+/* Footer styles (customize as needed) */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}

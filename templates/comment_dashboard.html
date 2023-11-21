@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comment Management Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* styles.css */
+
+            /* Apply styles to the entire page */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Style the header */
+            header {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 20px;
+            }
+
+            /* Style the table */
+            .comment-table {
+                width: 100%;
+                border-collapse: collapse;
+                border: 1px solid #ccc;
+            }
+
+            .comment-table th, .comment-table td {
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+            }
+
+            /* Style the status and actions cells */
+            .status-cell, .actions-cell {
+                text-transform: capitalize;
+            }
+
+            /* Style buttons */
+            .actions-cell button {
+                background-color: #e96106;
+                color: #fff;
+                border: none;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+
+            .actions-cell button:hover {
+                background-color: #ee711e;
+            }
+
+    </style>
+</head>
+<body>
+    {% include 'dashboard.html' %}
+    <header>
+        <h1>Comment Management Dashboard</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <table class="comment-table">
+                <thead>
+                    <tr>
+                        <th>Comment</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Page</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for comment in comments %}
+                        <tr>
+                            <td>{{ comment.Comment }}</td>
+                            <td>{{ comment.Name }}</td>
+                            <td>{{ comment.Mail }}</td>
+                            <td>{{ comment.Page }}</td>
+                            <td class="status-cell">
+                                {% if comment.IsApproved %}
+                                    Approved
+                                {% else %}
+                                    Unapproved
+                                {% endif %}
+                            </td>
+                            <td class="actions-cell">
+                                {% if not comment.IsDeleted %}
+                                    <button type="submit" name="approve_{{ comment.Id }}" value="approve">Approve</button>
+                                    <button type="submit" name="reject_{{ comment.Id }}" value="reject">Reject</button>
+                                    <button type="submit" name="delete_{{ comment.Id }}" value="delete">Delete</button>
+                                {% else %}
+                                    <button type="submit" name="restore_{{ comment.Id }}" value="restore">Restore</button>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </main>
+</body>
+</html>

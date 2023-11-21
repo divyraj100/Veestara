@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='grid-card.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
+    <title>Blog Home</title>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <main>
+        <section class="article-list">
+            <!-- Display a list of articles here -->
+
+            {% set latest_post = page | max(attribute='Date') %}
+            {% if latest_post %}
+            {% for pages in page %}
+                <article class="article-card">
+                    <img src="{{ url_for('display_image_page', page_id=pages.Id) }}" alt="Article Image">
+                    <div class="content-wrapper">
+                        <span class="date-span"><b>{{ pages.Date.strftime("%d %b %Y") }}</b></span>
+                        <div class="separator">
+                            <hr class="hr1">
+                            <span class="separator-text">x</span>
+                            <hr class="hr2">
+                        </div>
+                        <h2 class="article-title">{{ pages.Title | safe }}</h2>
+                        <p class="article-description">{{ pages.Content | striptags | wordlimit(25) | safe }}</p>
+                        <p><a href="{{ url_for('view_full_page', page_id=pages.Id) }}">Read more</a></p>
+                        <div class="separator">
+                            <hr class="hr3">
+                            <span class="separator-text">x</span>
+                            <hr class="hr4">
+                        </div>
+                        <span><b>By Veestara</b></span>
+                    </div>
+                </article>
+            </a>
+            {% endfor %}
+            <!-- Add more article cards here -->
+            {% else %}
+            <p>No posts available</p>
+            {% endif %}
+
+
+        </section>
+    </main>
+    {% include 'footer.html' %}
+</body>
+
+</html>

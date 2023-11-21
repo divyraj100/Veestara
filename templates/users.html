@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Users</title>
+    <link rel="stylesheet" href="/static/user.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #555;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        /* Header styles */
+        h1 {
+            font-size: 24px;
+            color: #fcfcfc;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            color: #fff;
+            
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+        
+        th {
+            background-color: #FF6600; /* Change to your desired color */
+            color: #fff;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    {% include 'dashboard.html' %}
+    <div class="container">
+        <h1 align="center">Registered Users</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.role }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

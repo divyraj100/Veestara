@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700">
+
+    <style>
+        .art_comment {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* max-width: 500px; */
+            width: auto;
+            margin: 0 auto;
+        }
+
+        #cmt_area {
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            /* Add a custom border */
+            border-top: none;
+        }
+
+        #cmt_name,
+        #cmt_mail {
+            padding: 8px;
+            border-radius: 8px;
+            width: 100%;
+            margin: 6px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            /* Add a custom border */
+            border-top: none;
+        }
+
+        #submit_Comment {
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #d37334;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        #submit_Comment:hover {
+            background-color: #e05e21;
+        }
+    </style>
+    <title>{{ article.Title }}</title>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <section class="article">
+        {% if article.ImageData %}
+        <img src="{{ url_for('display_image', article_id=article.Id) }}" alt="Article Image">
+        {% endif %}
+
+        <div class="article-details">
+            <!-- Inside the article-details div -->
+            <a href="{{ url_for('display_category', category=article.Category) }}" class="category-button">{{
+                article.Category }}</a>
+            <div class="article-author">By {{ article.Author }} |</div>
+            <div class="article-date">{{ article.Date.strftime("%B %d, %Y") }}</div>
+        </div>
+
+        <h1 class="article-title">{{ article.Title }}</h1>
+        <p class="article-content">{{ article.Content | safe }}</p><br><br>
+
+        <form action="{{ url_for('article', article_id=article.Id) }}" method="POST">
+
+            <div class="art_comment">
+                <label for="cmt_title">Leave a comment </label><br><br>
+                <textarea type="text" id="cmt_area" name="cmt_area" for="cmt_area" rows="8" cols="102" required
+                    style="resize: none;" wrap="soft" placeholder="Type your message here...">
+            </textarea><br><br>
+
+                <input type="text" id="cmt_name" name="cmt_name" required placeholder="Name*"><br><br>
+                <input type="text" id="cmt_mail" name="cmt_mail" required placeholder="Email*"><br><br>
+
+                <button type="submit" name="action" value="submit_Comment" id="submit_Comment">Submit Comment</button>
+
+            </div>
+
+            <!-- Add this code to display flash messages -->
+            <!-- {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                <li class="flash-message">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %} -->
+
+            <!-- Your existing HTML content -->
+            <form action="" method="POST">
+                <!-- ... rest of your form ... -->
+            </form>
+
+        </form>
+        <!-- Add this code to your "article.html" template -->
+        <div class="comment">
+            <div class='cmt-title'>Comments</div>
+            {% if comments %}
+            <ul class="list-group">
+                {% for comment in comments %}
+                <li class="list-group-item">
+                    <div class="cmt_user"> <strong>{{ comment.Name }}</strong> - <span> {{ comment.Mail }}</span>
+                    </div>
+                    <div class="cmt_cmt">{{ comment.Comment }}</div>
+                    <hr>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No comments available.</p>
+            {% endif %}
+        </div>
+
+
+
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

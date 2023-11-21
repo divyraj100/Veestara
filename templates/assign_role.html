@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assign User Roles</title>
+    <link rel="stylesheet" href="/static/assign_role.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px; /* Add border-radius to the outer border of the table */
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        select {
+            width: 100px;
+        }
+        form {
+            display: inline;
+            text-align: center; /* Center content horizontally */
+        }
+        .row-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type="submit"] {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px; /* Add border-radius to the buttons */
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    {% include 'dashboard.html' %}
+    <h1>User Management</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <form method="POST" action="{{ url_for('update_user_role', user_id=user.id) }}">
+                <td>{{ user.username }}</td>
+                <td>
+                    <select name="new_role">
+                        <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>Admin</option>
+                        <option value="user" {% if user.role == 'user' %}selected{% endif %}>User</option>
+                    </select>
+                </td>
+                <td><input type="submit" value="Edit Role"></td>
+            </form>
+            <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}">
+                <td><input type="submit" value="Delete User"></td>
+            </form>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

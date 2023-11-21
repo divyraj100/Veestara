@@ -1,0 +1,875 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: "Jost", sans-serif;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+
+
+}
+
+
+.header {
+    width: 80%;
+    height: 3vw;
+    margin: .8vw auto;
+    display: flex;
+    border-radius: 1.2vw;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    border-bottom: 1px solid #dadadd;
+    align-items: center;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+/* icon style */
+
+#icon-menu {
+    height: 2vw;
+    width: 2vw;
+}
+
+#icon-h-search {
+    height: 1.5vw;
+    width: 1.5vw;
+}
+
+#icon-mail {
+    height: 1.8vw;
+    width: 1.8vw;
+    margin-right: 1.2vw;
+}
+
+#icon-h-search-2 {
+    display: none;
+}
+
+.social img {
+    height: 1.8vw;
+    width: 1.8vw;
+    margin-right: 1.2vw;
+
+}
+
+
+.logo {
+    display: flex;
+    margin: 0 2vw;
+    align-content: center;
+    justify-content: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.logo #logo-icon {
+    font-size: 1.2vw;
+    font-weight: 700;
+    height: 1.8vw;
+    width: auto;
+    /* margin-left: -1.2vw;
+    margin-right: 1vw; */
+}
+
+.logo #logo-text {
+    display: none;
+}
+
+
+.nav {
+    display: flex;
+    gap: 3vw;
+    margin: 0 1.6vw;
+
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f2f2f2;
+}
+
+.nav h4 {
+    font-size: 1vw;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav h4:hover {
+    color: pink;
+}
+
+#icon-menu {
+    display: none;
+}
+
+.h-search {
+    display: flex;
+    background-color: #f2f2f2;
+    width: auto;
+    height: auto;
+    margin: 1vw 1vw;
+    border-radius: 2vw;
+}
+
+
+.search-txt {
+    /* display: none; */
+    /* margin: .3vw .3vw; */
+    font-size: 1vw;
+    border: none;
+    outline: none;
+    float: left;
+    border-radius: 2vw;
+    transition: 0.4s;
+    width: 0;
+    line-height: 1vw;
+    background-color: #f2f2f2;
+
+}
+
+.h-search:hover>.search-txt {
+    width: 12vw;
+    padding: 0 0.5vw;
+}
+
+.search-btn {
+    display: flex;
+    margin: .3vw .3vw;
+    font-size: 1.2vw;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 2vw;
+    transition: 0.4s;
+}
+
+#icon-h-search {
+    display: flex;
+    margin: .3vw .3vw;
+    font-size: 1vw;
+    color: #f2f2f2;
+    border: 3px solid pink;
+    background-color: pink;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+
+
+/* Search Field */
+
+.search-box {
+    width: 100%;
+    height: 48px;
+    display: none;
+    align-items: center;
+    background-color: #333;
+    justify-content: center;
+}
+
+.h-search-btn {
+    display: flex;
+    margin: auto 0;
+}
+
+#h-icon {
+    display: none;
+}
+
+/*Menu Style */
+
+.menu {
+    display: none;
+}
+
+
+.footer {
+    width: 100%;
+    height: auto;
+    background-color: #333;
+    margin-top: 10vw;
+    align-items: center;
+    display: flex;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.clicked {
+    color: pink;
+    /* Change the color to an orange shade */
+    transition: color 0.3s ease;
+    /* Add a smooth color transition */
+    cursor: pointer;
+    /* Change cursor on hover */
+}
+
+.footer a {
+    text-decoration: none;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.f-con {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.f-logo {
+    display: flex;
+    width: 18%;
+    margin: auto 1.2vw;
+    flex-direction: column;
+}
+
+.f-credit {
+    margin: 0 0 0.6vw 0;
+    font-weight: 500;
+    font-size: 1vw;
+    color: #f2f2f2;
+
+}
+
+.f-logo img {
+    width: 14vw;
+    height: 14vw;
+}
+
+.f-logo p {
+    margin-top: -4.6vw;
+    margin-bottom: 1.7vw;
+    font-size: 1vw;
+    color: #f2f2f2;
+}
+
+.line {
+    border-left: 2px solid #dadadd;
+    height: 10vw;
+    margin: auto 1.4vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.2vw;
+}
+
+
+.f-nav {
+    color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    margin: auto 1.4vw;
+    text-align: center;
+    align-items: center;
+}
+
+
+.mail {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1.4vw;
+    justify-content: center;
+}
+
+.v-mail {
+    font-size: 1.4vw;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social a {
+    color: #f2f2f2;
+}
+
+
+.f-nav h4 {
+    font-weight: 400;
+    font-size: 1.1vw;
+    margin-bottom: 1.2vw;
+    cursor: pointer;
+}
+
+.f-nav h4:hover{
+    color: pink;
+}
+
+.social img{
+    cursor: pointer;
+}
+
+#f-title {
+    margin-bottom: 1.4vw;
+    margin-top: 1.8vw;
+    font-weight: 600;
+    font-size: 1.2vw;
+}
+
+.mobile-f {
+    display: none;
+}
+
+a:focus {
+
+    outline: none;
+    border: 1px solid #fff;
+}
+
+a {
+    height: fit-content;
+    width: fit-content;
+}
+
+@media (max-width: 600px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .clicked {
+        color: pink;
+        /* Change the color to an orange shade */
+        transition: color 0.3s ease;
+        /* Add a smooth color transition */
+        cursor: pointer;
+        /* Change cursor on hover */
+    }
+
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+
+    /* header style */
+    .header {
+        height: 60px;
+        width: 100%;
+        margin: 0;
+        /* margin-left: -0.2vh; */
+        align-items: center;
+        padding: 0;
+        position: relative;
+        display: flex;
+        border-radius: 0;
+        justify-content: space-between;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        z-index: 0;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .nav h4 {
+        display: none;
+    }
+
+    .logo {
+        display: flex;
+        margin: 0 auto;
+        margin-left: 16vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo #logo-icon {
+        font-size: 3.2vh;
+        height: 8vw;
+        width: auto;
+    }
+
+
+    .logo #logo-text {
+        height: 8vw;
+        width: auto;
+        display: flex;
+    }
+
+    /* a style */
+
+
+
+    #icon-menu {
+        display: flex;
+        width: 3.2vh;
+        height: 3.2vh;
+        cursor: pointer;
+        margin: 2vh 1.2vh;
+    }
+
+    #icon-h-search-2 {
+        display: flex;
+        width: 3.2vh;
+        height: 3.2vh;
+        margin: 2vh 1.2vh;
+        cursor: pointer;
+        /* margin-right: 4.8vw; */
+
+    }
+
+    /* search btn */
+
+    .h-search {
+        display: none;
+        width: auto;
+        height: auto;
+        margin: 2vw;
+
+    }
+
+    .search-box {
+        width: 98%;
+        height: auto;
+        display: none;
+        margin: 1.2vw auto;
+        position: relative;
+        align-items: center;
+        border-radius: 2.5vw;
+        justify-content: center;
+        transition: display 0.8s ease;
+        z-index: 1;
+        position: relative;
+
+    }
+
+    .h-search-btn,
+    .h-search-txt {
+        margin: 2vw;
+        cursor: pointer;
+    }
+
+    .h-search-btn {
+        display: flex;
+        margin: auto 0;
+        border-radius: 50%;
+        background-color: #f2f2f2;
+        height: 28px;
+        width: 28px;
+        border: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .h-search-btn:hover {
+        background-color: pink;
+    }
+
+    #icon-sbox-search {
+        height: 2.2vh;
+        width: 2.2vh;
+    }
+
+    .h-search-txt {
+        margin-right: 2vw;
+        background-color: #f2f2f2;
+        height: 7vw;
+        width: 75%;
+        border: none;
+        padding: 0 1.2vw;
+        border-radius: 1.6vw;
+        outline: none;
+        float: none;
+        text-decoration: none;
+        line-height: 1.2vw;
+    }
+
+    .h-search-txt:focus {
+        border-bottom: 2px solid #333;
+    }
+
+    .search-box.active {
+        display: flex;
+    }
+
+    /* Menu Style */
+
+    .menu {
+        width: 98%;
+        height: auto;
+        margin: 1.2vw auto 0 0.3vh;
+        background-color: #333;
+        position: relative;
+        border-radius: 2.5vw;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .mob-nav {
+        margin: 2.2vw 4.2vw;
+    }
+
+    .mob-nav h4 {
+        margin-bottom: 1.8vw;
+        font-size: 2.4vh;
+        font-weight: 600;
+        color: #f2f2f2;
+        cursor: pointer;
+    }
+
+    .mob-nav h4:hover {
+        color: pink;
+    }
+
+
+    /* footer style */
+
+    .footer {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .f-con {
+        display: none;
+    }
+
+    .f-credit {
+        font-size: 1.8vh;
+    }
+
+    .mobile-f {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        height: auto;
+        margin: 1.6vh;
+
+    }
+
+    #m-f-logo {
+        height: auto;
+        width: 15vh;
+        margin-top: 2vw;
+    }
+
+    .m-con {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .m-con>.f-nav {
+        margin: .8vh 4.5vh 0 4.5vh;
+    }
+
+    .f-nav>#f-title {
+        font-size: 2.8vh;
+        font-weight: 700;
+    }
+
+    .f-nav {
+        align-items: center;
+    }
+
+    .f-nav h4 {
+        font-size: 2.4vh;
+    }
+
+    .mail {
+        display: inline-flex;
+    }
+
+    .v-mail {
+        font-size: 2.2vh;
+    }
+
+    .mail>#icon-mail {
+        height: 2vh;
+        width: 2vh;
+        margin: 1.2vh 0;
+    }
+
+    .social {
+        display: flex;
+    }
+
+    .social img {
+        height: 4vh;
+        width: 4vh;
+        margin: 1.2vh 2vh;
+    }
+
+}
+
+@media (min-width:601px) and (max-width:1024px) {
+
+
+    /* header - style */
+
+    .header {
+        width: 80%;
+        height: 4vw;
+        max-width: 80vw;
+        /* margin: .8vw auto .6vw auto; */
+        display: flex;
+        border-radius: 1.2vw;
+        justify-content: space-between;
+        background-color: #333;
+        align-items: center;
+        color: #fff;
+        border-bottom: 1px solid #dadadd;
+        align-items: center;
+        position: relative;
+    }
+
+
+    .clicked {
+        color: pink;
+        /* Change the color to an orange shade */
+        transition: color 0.3s ease;
+        /* Add a smooth color transition */
+        cursor: pointer;
+        /* Change cursor on hover */
+    }
+
+    a:focus {
+
+        outline: none;
+        border: 1px solid #fff;
+    }
+
+    a {
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .logo {
+        display: flex;
+        margin: 0 auto;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .logo #logo-icon {
+        height: 2.7vw;
+        width: auto;
+        /* margin-left: -1.2vw; */
+        margin-right: .7vw;
+        position: relative;
+
+    }
+
+    .logo #logo-text {
+        display: flex;
+        width: auto;
+        height: 2.7vw;
+        position: relative;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    #icon-menu {
+        display: flex;
+        position: relative;
+        margin-left: 1.2vw;
+    }
+
+    #icon-h-search-2 {
+        display: flex;
+        height: 2vw;
+        width: 2vw;
+        position: relative;
+        /* margin-right: 1.2vw; */
+        margin: 2vw 1.2vw 2vw 0vw;
+    }
+
+    .h-search {
+        display: none;
+    }
+
+    .search-box.active {
+        display: flex;
+    }
+
+
+    /* Search Field */
+
+    .search-box {
+        width: 38vw;
+        height: auto;
+        display: none;
+        margin: .3vw auto;
+        border-radius: 2vw;
+        align-items: center;
+        border: 3px solid #dadadd;
+        background-color: #333;
+        justify-content: center;
+    }
+
+    .h-search-btn {
+        display: flex;
+        margin: auto 0;
+    }
+
+    .h-search-btn,
+    .h-search-txt {
+        margin: .7vw .8vw;
+        cursor: pointer;
+    }
+
+    .h-search-btn {
+        display: flex;
+        margin: auto auto auto 1vw;
+        border-radius: 50%;
+        background-color: #f2f2f2;
+        height: auto;
+        width: auto;
+        border: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .h-search-btn:hover {
+        background-color: pink;
+    }
+
+    #icon-sbox-search {
+        height: 2vw;
+        width: 2vw;
+        margin: 0.6vw;
+    }
+
+    .h-search-txt {
+        background-color: #f2f2f2;
+        height: 3vw;
+        width: 78%;
+        border: none;
+        padding: 0 1vw;
+        border-radius: 1.2vw;
+        outline: none;
+        float: none;
+        text-decoration: none;
+        line-height: 1vw;
+    }
+
+    .h-search-txt:focus {
+        border-bottom: 2px solid pink;
+    }
+
+    /* menu style */
+
+    .menu {
+        width: 80%;
+        height: auto;
+        margin: .3vw auto;
+        background-color: #333;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 1.8vw;
+        z-index: 2;
+        display: none;
+
+
+
+    }
+
+    .mob-nav {
+        margin: 2vw 4vw;
+
+    }
+
+    .mob-nav h4 {
+        margin: .6vw 0;
+        font-size: 2vw;
+        font-weight: 500;
+        color: #f2f2f2;
+        cursor: pointer;
+
+    }
+
+    .mob-nav h4:hover {
+        color: pink;
+    }
+
+
+    .menu.active {
+        display: flex;
+    }
+
+
+    /* footer style */
+
+    .footer {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .f-con {
+        display: flex;
+        margin: 1.8vw 0;
+    }
+
+    .f-credit {
+        font-size: 1.5vw;
+    }
+
+    .f-nav>#f-title {
+        font-size: 1.8vw;
+        font-weight: 700;
+    }
+
+    .f-nav h4 {
+        font-size: 1.8vw;
+    }
+
+    .v-mail {
+        font-size: 1.8vw;
+    }
+
+    .mail>#icon-mail {
+        height: 2.2vw;
+        width: 2.2vw;
+        margin: 0 1.1vw;
+    }
+
+
+    .social img {
+        height: 2.2vw;
+        width: 2.2vw;
+        margin: 1.2vh 2vh;
+    }
+
+    .f-logo p {
+        font-size: 1.3vw;
+    }
+
+
+}

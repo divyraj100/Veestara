@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="search.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body class="search-body">
+    <div class="header">
+        <header>
+
+            <a href="/">
+                <div class="logo">
+                    <img src="/static/Logo.svg" alt="Website Logo">
+                </div>
+            </a>
+            <nav>
+                <ul class="ul_">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Astrology">Astrology</a></li>
+                    <li><a href="/Horoscope">Horoscope</a></li>
+                    <li><a href="{{ url_for('pages') }}">Page</a></li>
+                </ul>
+            </nav>
+            <!-- Inside your header.html or navigation bar -->
+
+
+            <form action="{{ url_for('search') }}" method="GET" class="search-form">
+                <div class="search-box">
+
+                    <input class="search-txt" type="text" name="q" placeholder="Type to search">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </header>
+    </div>
+
+</body>
+
+
+<!--<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
+
+</head>
+
+<body>
+    <div class="header">
+        <header>
+
+            <a href="/">
+                <div class="logo">
+                <img src="/static/Logo.svg" alt="Website Logo">
+            </div></a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Astrology">Astrology</a></li>
+                    <li><a href="/Horoscope">Horoscope</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+      
+            
+            
+                <form action="{{ url_for('search') }}" method="GET" class="search-form">
+                    <input type="text" name="q" placeholder="Search articles">
+                    <button type="submit" class="search-button"><strong>Search</strong></button>
+                </form>
+        
+        </header>
+    </div>
+
+</body> -->
+
+</html>

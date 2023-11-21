@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='grid-card.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
+
+</head>
+<body>
+{% include 'header.html' %}
+    <h1 align="center">Search Results for "{{ query }}"</h1>
+    <section class="article-list">
+        {% for article in results %}
+            <a href="{{ url_for('display_blog_post', category=article.Category, url=article.URL) }}">
+                <article class="article-card">
+                    <img src="{{ url_for('display_image', article_id=article.Id) }}" alt="Article Image">
+                    <div class="content-wrapper">
+                        <span class="date-span"><b>{{ article.Date.strftime("%d %b %Y") }}</b></span>
+                        <div class="separator">
+                            <hr class="hr1">
+                            <span class="separator-text">x</span>
+                            <hr class="hr2">
+                        </div>
+                        <h2 class="article-title">{{ article.Title | safe }}</h2>
+                        <p class="article-description">{{ article.Content | striptags | wordlimit(25) | safe }}</p>
+                        <div class="separator">
+                            <hr class="hr3">
+                            <span class="separator-text">x</span>
+                            <hr class="hr4">
+                        </div>
+                        <span><b>By {{ article.Author }}</b></span>
+                    </div>
+                </article>
+            </a>
+        {% endfor %}
+    </section>
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Admin</title>
+</head>
+<body>
+    <h1>Create Admin</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="username">Admin Username:</label>
+            <input type="text" name="username" required>
+        </div>
+        <div>
+            <label for="password">Admin Password:</label>
+            <input type="password" name="password" required>
+        </div>
+        <div>
+            <input type="submit" value="Create Admin">
+        </div>
+        
+    </form>
+</body>
+</html>
