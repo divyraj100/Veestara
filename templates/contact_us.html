@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700">
+    <title>Contact us</title>
+    <style>
+        body {
+            font-family: "jost", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .con {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 60vw;
+            height: auto;
+            border: 1px solid #dadada;
+            border-radius: 1vw;
+            padding: 2vw;
+        }
+
+        .con h2 {
+            text-align: center;
+        }
+
+        @media (max-width:600px){
+            .con{
+                width: 80vw;
+                border: none;
+            }
+
+            .con p{
+                font-size: 2.6vh;
+            }
+
+            .con h2{
+            margin-bottom: 7.2vw;
+            }
+
+            .con p{
+                margin-bottom: 7vw;
+            }
+
+            .con img{
+                height: 8vw;
+                width: auto;
+            }
+        }
+
+        h2,h3,p{
+            margin-bottom: 1.2vw;
+        }
+
+        p{
+            font-size: 1vw;
+            font-weight: 500;
+        }
+
+        img{
+            margin: 1.4vw auto;
+            height: 4vw;
+            width: auto;
+        }
+
+        .mail{
+            font-weight: 500;
+            font-size: 1.2vw;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="con">
+       <h2>Do you want to connect with us?</h2>
+       <p>You can do this through the links.</p>
+       <img src="static/icon/mail_send_copy.svg" alt="main-icon">
+       <p class="mail">veestara0@gmail.com</p>
+
+       <h3>Follow us on socials</h3>
+       <h2>Thank you!</h2>
+       <h3>Will get back to you soon...</h3>
+    </div>
+
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>

@@ -73,61 +73,51 @@
             <div class="article-date">{{ article.Date.strftime("%B %d, %Y") }}</div>
         </div>
 
-        <h1 class="article-title">{{ article.Title }}</h1>
-        <p class="article-content">{{ article.Content | safe }}</p><br><br>
-
-        <form action="{{ url_for('article', article_id=article.Id) }}" method="POST">
-
-            <div class="art_comment">
-                <label for="cmt_title">Leave a comment </label><br><br>
-                <textarea type="text" id="cmt_area" name="cmt_area" for="cmt_area" rows="8" cols="102" required
-                    style="resize: none;" wrap="soft" placeholder="Type your message here...">
-            </textarea><br><br>
-
-                <input type="text" id="cmt_name" name="cmt_name" required placeholder="Name*"><br><br>
-                <input type="text" id="cmt_mail" name="cmt_mail" required placeholder="Email*"><br><br>
-
-                <button type="submit" name="action" value="submit_Comment" id="submit_Comment">Submit Comment</button>
-
-            </div>
-
-            <!-- Add this code to display flash messages -->
-            <!-- {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            <ul class="flash-messages">
-                {% for message in messages %}
-                <li class="flash-message">{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %} -->
-
-            <!-- Your existing HTML content -->
-            <form action="" method="POST">
-                <!-- ... rest of your form ... -->
-            </form>
-
-        </form>
-        <!-- Add this code to your "article.html" template -->
-        <div class="comment">
-            <div class='cmt-title'>Comments</div>
-            {% if comments %}
-            <ul class="list-group">
-                {% for comment in comments %}
-                <li class="list-group-item">
-                    <div class="cmt_user"> <strong>{{ comment.Name }}</strong> - <span> {{ comment.Mail }}</span>
-                    </div>
-                    <div class="cmt_cmt">{{ comment.Comment }}</div>
-                    <hr>
-                </li>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p>No comments available.</p>
-            {% endif %}
+        <div class="content-content">
+            <h1 class="article-title">{{ article.Title }}</h1>
+            <p class="article-content">{{ article.Content | safe }}</p><br><br>
         </div>
 
+        <!-- <h1 class="article-title">{{ article.Title }}</h1>
+        <p class="article-content">{{ article.Content | safe }}</p><br><br> -->
 
+        <div class="comment-section">
+            <form action="{{url_for('submit_comment', article_id=article.Id) }}" method="POST">
+
+                <div class="art_comment">
+                    <label for="cmt_title">Leave a comment </label><br><br>
+                    <textarea type="text" id="cmt_area" name="cmt_area" for="cmt_area" rows="8" cols="102" required
+                        style="resize: none;" wrap="soft" placeholder="Type your message here..." maxlength=500>
+                </textarea><br><br>
+
+                    <input type="text" id="cmt_name" name="cmt_name" required placeholder="Name*"><br><br>
+                    <input type="text" id="cmt_mail" name="cmt_mail" required placeholder="Email*"><br><br>
+
+                    <button name="action" value="submit_Comment" id="submit_Comment">Submit Comment</button>
+
+                </div>
+
+            </form>
+            <!-- Add this code to your "article.html" template -->
+            <div class="comment">
+                <div class='cmt-title'>Comments</div>
+                {% if comments %}
+                <ul class="list-group">
+                    {% for comment in comments %}
+                    <li class="list-group-item">
+                        <div class="cmt_user"> <strong>{{ comment.Name }}</strong> - <span> {{ comment.Mail }}</span>
+                        </div>
+                        <div class="cmt_cmt">{{ comment.Comment }}</div>
+                        <hr>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No comments available.</p>
+                {% endif %}
+            </div>
+
+        </div>
 
     </section>
 

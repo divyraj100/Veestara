@@ -15,10 +15,6 @@
             <img src="{{ url_for('display_image_page', page_id=pages.Id) }}" alt="Article Image">
         {% endif %}
         
-        <div class="article-details">
-            <!-- Inside the article-details div -->
-            <div class="article-date">{{ pages.Date.strftime("%B %d, %Y") }}</div>
-        </div>
         
         <h1 class="article-title">{{ pages.Title }}</h1>
         <p class="article-content">{{ pages.Content | safe }}</p>

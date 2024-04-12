@@ -96,5 +96,25 @@
     <div id="right-panel">
         
     </div>
+    <button id="clearCacheButton" onclick="clearCache()">Clear Cache</button>
+
+<script>
+    // JavaScript function to clear the cache
+    function clearCache() {
+        // Make an AJAX request to the Flask route that clears the cache
+        fetch('/clear-cache', { method: 'POST' })
+            .then(response => {
+                if (response.ok) {
+                    alert('Cache cleared successfully!');
+                } else {
+                    alert('Failed to clear cache.');
+                }
+            })
+            .catch(error => {
+                console.error('Error clearing cache:', error);
+                alert('Error clearing cache.');
+            });
+    }
+</script>
 </body>
 </html>

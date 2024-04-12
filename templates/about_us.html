@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700">
+    <title>About us</title>
+    <style>
+        body {
+            font-family: "jost", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .con {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            width: 60vw;
+            height: auto;
+            border: 1px solid #dadada;
+            border-radius: 1vw;
+            padding: 2vw;
+        }
+
+        .con h2 {
+            text-align: center;
+        }
+
+        @media (max-width:600px){
+            .con{
+                width: 80vw;
+                border: none;
+            }
+
+            .con p{
+                font-size: 2.6vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="con">
+        <p>Welcome to Veestara, your trusted source for daily, weekly, monthly, and yearly horoscope updates! We are
+            dedicated to bringing you insightful and accurate astrological guidance to help you navigate life’s twists
+            and turns.</p><br>
+        <h2>Our Mission </h2><br>
+
+        <p>At Veestara, our mission is to empower individuals with the wisdom of astrology. We believe that the
+            positions of celestial bodies can offer valuable insights into your life, relationships, and future.
+
+            Whether you’re seeking daily horoscopes for quick inspiration, weekly insights to plan your activities,
+            monthly forecasts to map your course, or yearly predictions for a broader perspective, we’re here to provide
+            you with the guidance you need.</p><br>
+        <h2>The Veestara Experience</h2><br>
+
+        <p>What sets Veestara apart is our commitment to quality and authenticity. We work with well-known and respected
+            astrologers who have dedicated their lives to the study of the stars and planets.
+
+            Our team of expert astrologers brings you horoscope updates that are not only accurate but also insightful.
+        </p><br>
+        <h2>Your Trusted Astrological Companion
+        </h2><br>
+
+        <p>Whether you’re a seasoned astrology enthusiast or just curious about what the universe has in store for you,
+            Veestara is your trusted companion.
+
+            We understand that life can be full of uncertainties, and astrology can offer guidance in those moments. Let
+            us be your guiding light on your journey.</p><br>
+        <h2>Connect with Us</h2><br>
+        <p>We love hearing from our community! If you have any questions, feedback, or suggestions, please don’t
+            hesitate to reach out. We value your input and are committed to continually improving our services to meet
+            your astrological needs.
+
+        </p>
+    </div>
+
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>

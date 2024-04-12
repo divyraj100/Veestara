@@ -10,18 +10,6 @@
 
     {{ckeditor.load(pkg_type="full")}}
 
-    <!-- <script>
-        CKEDITOR.replace('Content', {
-            toolbar: [
-                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike'] },
-                { name: 'styles', items: ['Format'] }
-            ]
-
-        });
-
-    </script> -->
-
-
 </head>
 
 <body>
@@ -41,34 +29,16 @@
                 <label for="URL">URL:</label>
                 <input type="text" id="URL" name="URL"><br><br>
 
-                <!--  <label for="Content">Content: </label>
-                <textarea id="Content" name="Content" rows="4" cols="48"></textarea><br><br> -->
-
                 <label for="Content">Content: </label>
-                {{ form.Content(class="ckeditor") }} <!-- Render the CKEditor field -->
-                <!-- {{ form.Content.label }} Render the field's label -->
-
-
-                <!-- Display the content without using the safe filter -->
-                <!-- <div>
-                    {{ form.Content.data | safe | striptags  }}
-                </div> -->
-                <!-- {% if not ckeditor %}
-                <p>{{ form.Content(class='ckeditor') | safe | striptags }}</p>
-                {% else %}
-                <p>{{ form.Content(class='ckeditor') | safe }}</p>
-                {% endif %} -->
-
-                <!--{{ form.Content.label }} Render the field's label -->
-                <!-- <p> {{ form.Content | safe | striptags  }} </p>Render the CKEditor field -->
+                {{ form.Content(class="ckeditor") }}
 
                 <label for="Image">Image:</label>
                 <input type="file" id="Image" name="Image"><br><br>
 
-                <button type="submit" name="action" value="create">Create Article</button>
-                <button type="submit" name="action" value="delete">Delete Article</button>
-                <button type="submit" name="action" value="update">Update Article</button>
-                <button type="submit" name="action" value="show">Show Articles</button>
+                <button type="submit" name="action" value="create">Create Page</button>
+                <button type="submit" name="action" value="delete">Delete Page</button>
+                <button type="submit" name="action" value="update">Update Page</button>
+                <button type="submit" name="action" value="show">Show Page</button>
             </form>
 
         <a href="/">Back to Home</a>
